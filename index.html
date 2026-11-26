@@ -37,34 +37,24 @@
 <div id="app" class="app hidden">
   <aside class="sidebar">
     <a class="brand" href="#" data-page="home"><img class="brand-mark-img" src="assets/mood-deck-mark.svg" alt=""><span>mood deck</span></a>
-    <div class="side-label">YOUR SPACE</div>
-    <nav class="nav">
-      <button class="nav-item active" data-page="home"><span>⌂</span> Overview</button>
-      <button class="nav-item" data-page="checkin"><span>◉</span> Check-in</button>
+    <div class="side-label">YOUR SPACE</div><nav class="nav">
+      <button class="nav-item active" data-page="home"><span>⌂</span> Home</button>
       <button class="nav-item" data-page="journal"><span>▤</span> Journal</button>
       <button class="nav-item" data-page="insights"><span>⌁</span> Insights</button>
-      <button class="nav-item" data-page="elo"><span>✳</span> Elo <b class="new-tag">AI</b></button>
-      <button class="nav-item" data-page="play"><span>✧</span> Mood Play <b class="new-tag">NEW</b></button>
-    </nav>
-    <div class="side-label platform-label">FAITH &amp; COMMUNITY</div>
-    <nav class="nav">
-      <a class="nav-item external-nav" href="pages/bible.html"><span>⌑</span> The Word</a>
-      <a class="nav-item external-nav" href="pages/music.html"><span>♫</span> The Sound</a>
-      <a class="nav-item external-nav" href="pages/community.html"><span>◎</span> Community</a>
-      <a class="nav-item external-nav" href="pages/ripple-room.html"><span>◌</span> Ripple Room</a>
+      <button class="nav-item" data-page="explore"><span>✧</span> Explore</button>
     </nav>
     <div class="sidebar-bottom">
-      <div class="mini-profile"><div class="avatar-mini" id="sideAvatar">M</div><div><strong id="sideName">Your space</strong><small>Personal space</small></div><button data-page="profile" aria-label="Profile settings">···</button></div>
+      <div class="mini-profile"><div class="avatar-mini" id="sideAvatar">M</div><div><strong id="sideName">Your space</strong><small>Personal space</small></div><button data-page="profile" aria-label="Open Personal Space">↗</button></div>
       <p>Made for the human in you. <span>✳</span></p>
     </div>
   </aside>
 
   <main class="main">
-    <header class="topbar"><div class="mobile-brand"><img class="brand-mark-img" src="assets/mood-deck-mark.svg" alt=""> mood deck</div><div class="top-date" id="todayDate"></div><button class="profile-pill" data-page="profile"><span id="topInitial">M</span><span id="topName">Profile</span><span>⌄</span></button></header>
+    <header class="topbar"><div class="mobile-brand"><img class="brand-mark-img" src="assets/mood-deck-mark.svg" alt=""> mood deck</div><div class="top-date" id="todayDate"></div><button class="profile-pill" data-page="profile"><span id="topInitial">M</span><span id="topName">Personal Space</span><span>⌄</span></button></header>
     <section class="page active" id="page-home">
       <div class="welcome-row"><div><p class="eyebrow" id="greeting">A MOMENT FOR YOU</p><h1 id="welcomeTitle">Welcome back.</h1><p class="muted">You don't have to have it all figured out.</p></div><div class="welcome-stamp">YOUR SPACE<br><b>YOUR PACE</b></div></div>
       <div class="hero-card">
-        <div class="hero-copy"><span class="eyebrow">01 / DAILY PRACTICE</span><h2>Meet yourself<br>where you are.</h2><p>A small check-in can make space for a bigger understanding.</p><button class="btn dark" data-page="checkin">Check in with yourself <span>↗</span></button></div>
+        <div class="hero-copy"><span class="eyebrow">01 / DAILY PRACTICE</span><h2>Meet yourself<br>where you are.</h2><p>A small check-in can make space for a bigger understanding.</p><button class="btn dark" data-open-checkin>Check in with yourself <span>↗</span></button></div>
         <div class="hero-art"><div class="hero-ring ring-one"></div><div class="hero-ring ring-two"></div><div class="hero-blob"></div><div class="hero-spark">✳</div></div>
         <span class="hero-index">01</span>
       </div>
@@ -127,24 +117,36 @@
       </div><div id="gameStage" class="panel game-stage hidden"></div>
     </section>
 
-    <section class="page" id="page-profile"><div class="page-intro"><p class="eyebrow">YOUR SPACE / SETTINGS</p><h1>A space that feels<br><em>like yours.</em></h1><p class="muted">Manage your profile and the way Mood Deck feels.</p></div><div class="profile-layout"><div class="panel profile-card"><div class="profile-avatar" id="profileAvatar">M</div><p class="eyebrow">YOUR PROFILE</p><h2 id="profileHeading">Your name</h2><p class="muted" id="profileEmailView">Local profile</p><span class="local-badge">● SAVED ON THIS DEVICE</span></div><div class="panel profile-settings"><p class="eyebrow">PERSONAL DETAILS</p><h3>Make yourself at home</h3><form id="editProfile"><label for="editName">Preferred name</label><input id="editName" maxlength="28"><label for="editEmail">Email (optional)</label><input id="editEmail" type="email"><button class="btn primary">Save changes</button></form><hr><p class="eyebrow">YOUR DATA</p><div class="setting-row"><div><strong>Export your reflections</strong><small>Download your mood and journal data as JSON.</small></div><button class="btn light" id="profileExport">Export</button></div><div class="setting-row"><div><strong>Start fresh</strong><small>Delete all local check-ins and journal entries.</small></div><button class="btn danger" id="clearData">Clear data</button></div><p class="tiny">This prototype does not yet have cloud accounts, password authentication or cross-device sync. Your information stays in this browser's local storage.</p></div></div></section>
+    <section class="page" id="page-explore"><div class="page-intro"><p class="eyebrow">A LITTLE MORE FOR YOU</p><h1>Explore your<br><em>own kind of growth.</em></h1><p class="muted">Your other Mood Deck experiences, gathered in one calm place.</p></div><div class="platform-links"><a href="pages/bible.html"><span>⌑</span><strong>The Word</strong><small>Bible reading and your 365-day journey</small></a><a href="pages/music.html"><span>♫</span><strong>The Sound</strong><small>Gospel music, worship and quiet moments</small></a><a href="#page-play" data-page="play"><span>✧</span><strong>Mood Play</strong><small>Mindful games and gentle resets</small></a><a href="pages/ripple-room.html"><span>◌</span><strong>Ripple Room</strong><small>A moment to pause and reset</small></a><a href="pages/community.html"><span>◎</span><strong>Community</strong><small>Connect and share with others</small></a><a href="#page-gallery" data-page="gallery"><span>▧</span><strong>The Gallery</strong><small>Keep photos and videos of moments worth remembering</small></a></div></section>
+    <section class="page" id="page-gallery">
+      <div class="page-intro"><p class="eyebrow">YOUR PERSONAL MEMORY SPACE</p><h1>Keep the moments<br><em>you want to return to.</em></h1><p class="muted">A little collection of places, people, seasons and moments that mean something to you.</p></div>
+      <section class="gallery-upload panel" aria-labelledby="galleryUploadTitle">
+        <div class="gallery-upload-copy"><p class="eyebrow">ADD TO YOUR COLLECTION</p><h2 id="galleryUploadTitle">Save a memory.</h2><p class="muted">Add photos or videos from your device. You can give each memory a little note.</p></div>
+        <label class="gallery-drop" for="galleryFiles"><span class="gallery-drop-icon">＋</span><strong>Choose photos or videos</strong><small>JPG, PNG, GIF, WEBP, MP4, MOV and more supported by your browser</small><input id="galleryFiles" type="file" accept="image/*,video/*" multiple></label>
+        <div class="gallery-compose"><label for="galleryCaption">A note for these memories <span>(optional)</span></label><input id="galleryCaption" type="text" maxlength="140" placeholder="A day I'll want to remember…"><button class="btn primary" id="saveGalleryFiles" type="button" disabled>Save to gallery <span>↗</span></button></div>
+        <p class="tiny gallery-privacy">Your gallery is private and saved in this browser on this device. It is not uploaded or synced to an account. Clearing browser data may remove your memories.</p>
+      </section>
+      <div class="gallery-toolbar"><div><p class="eyebrow">YOUR COLLECTION</p><h2>Moments, kept.</h2><p class="muted" id="galleryCount">Your memories will appear here.</p></div><div class="gallery-filters" role="group" aria-label="Filter gallery"><button class="selected" data-gallery-filter="all">All</button><button data-gallery-filter="image">Photos</button><button data-gallery-filter="video">Videos</button></div></div>
+      <div class="gallery-grid" id="galleryGrid"><div class="gallery-empty panel"><span>▧</span><h3>Your gallery is waiting.</h3><p>Add a photo or video of a moment you want to keep close.</p></div></div>
+    </section>
+    <section class="page" id="page-profile"><div class="page-intro"><p class="eyebrow">PERSONAL SPACE</p><h1>A space that feels<br><em>like yours.</em></h1><p class="muted">Your identity, your preferences and the details you choose to share.</p></div><div class="profile-layout"><div class="panel profile-card"><div class="profile-avatar" id="profileAvatar">M</div><p class="eyebrow">YOUR PROFILE</p><h2 id="profileHeading">Your name</h2><p class="muted" id="profileEmailView">Local profile</p><span class="local-badge">● SAVED ON THIS DEVICE</span></div><div class="panel profile-settings"><p class="eyebrow">PERSONAL DETAILS</p><h3>Make yourself at home</h3><form id="editProfile" class="personal-profile-form">
+<label for="editName">Display name</label><input id="editName" maxlength="28" autocomplete="name" placeholder="How should people know you?">
+<label for="editUsername">Username</label><div class="profile-username-field"><span>@</span><input id="editUsername" maxlength="20" pattern="[A-Za-z0-9_]+" placeholder="yourusername" autocomplete="username"></div><small class="tiny">3–20 letters, numbers or underscores. Usernames are unique when the live member directory is connected.</small>
+<label for="editBio">Bio</label><textarea id="editBio" rows="3" maxlength="180" placeholder="A little about who you are…"></textarea><small class="tiny" id="bioCount">0 / 180</small>
+<label for="editInterests">Interests</label><input id="editInterests" maxlength="180" placeholder="Faith, music, personal growth">
+<label for="editLocation">Location <span class="optional">(optional)</span></label><input id="editLocation" maxlength="60" placeholder="City or country">
+<label for="editEmail">Email <span class="optional">(optional, private)</span></label><input id="editEmail" type="email" autocomplete="email">
+<label for="editVisibility">Profile visibility</label><select id="editVisibility"><option value="discoverable">Discoverable — people can find my profile</option><option value="friends">Friends only — limited profile visibility</option><option value="hidden">Hidden — don't show me in discovery</option></select>
+<label class="photo-upload-label" for="editPhoto">Profile photo <span class="optional">(optional)</span></label><input id="editPhoto" type="file" accept="image/*">
+<button class="btn primary">Save Personal Space</button><p class="tiny">This local preview stores your profile on this device. Real accounts and cross-device visibility will come with Supabase.</p></form><hr><p class="eyebrow">YOUR DATA</p><div class="setting-row"><div><strong>Export your reflections</strong><small>Download your mood and journal data as JSON.</small></div><button class="btn light" id="profileExport">Export</button></div><div class="setting-row"><div><strong>Start fresh</strong><small>Delete all local check-ins and journal entries.</small></div><button class="btn danger" id="clearData">Clear data</button></div><p class="tiny">This prototype does not yet have cloud accounts, password authentication or cross-device sync. Your information stays in this browser's local storage.</p></div></div></section>
     <footer class="app-footer">MOOD DECK <span>·</span> FEEL. UNDERSTAND. BECOME.</footer>
   </main>
-  <nav class="mobile-nav" aria-label="All Mood Deck sections">
-<a class="active" href="#page-home" data-page="home"><span>⌂</span>Home</a>
-<a href="#page-checkin" data-page="checkin"><span>◉</span>Check-in</a>
-<a href="#page-journal" data-page="journal"><span>▤</span>Journal</a>
-<a href="#page-insights" data-page="insights"><span>⌁</span>Insights</a>
-<a href="#page-elo" data-page="elo"><span>✳</span>Elo</a>
-<a href="#page-play" data-page="play"><span>✧</span>Play</a>
-<a href="pages/bible.html"><span>⌑</span>The Word</a>
-<a href="pages/music.html"><span>♫</span>The Sound</a>
-<a href="pages/ripple-room.html"><span>◌</span>Ripple</a>
-<a href="pages/community.html"><span>◎</span>Community</a>
-<a href="#page-profile" data-page="profile"><span>○</span>You</a>
-</nav>
+  <nav class="mobile-nav" aria-label="Main navigation"><a class="active" href="#page-home" data-page="home"><span>⌂</span>Home</a><a href="#page-journal" data-page="journal"><span>▤</span>Journal</a><a href="#page-insights" data-page="insights"><span>⌁</span>Insights</a><a href="#page-explore" data-page="explore"><span>✧</span>Explore</a></nav>
 </div>
+<div id="checkinModal" class="checkin-modal hidden" role="dialog" aria-modal="true" aria-labelledby="checkinDialogTitle"><div class="checkin-modal-card"><button class="modal-close" id="closeCheckin" aria-label="Close check-in">×</button><p class="eyebrow">A MOMENT FOR YOU</p><h2 id="checkinDialogTitle">How are you arriving today?</h2><p class="muted">A gentle check-in. Share only what feels right.</p><div id="checkinMount"></div><button class="text-link skip-checkin" id="skipCheckin">Maybe later</button></div></div>
+<button class="elo-fab" id="eloFab" aria-label="Open Elo companion"><img src="assets/elo-avatar.svg" alt=""><span>Elo</span></button><div class="elo-drawer hidden" id="eloDrawer" role="dialog" aria-modal="true" aria-label="Elo reflection companion"><div class="elo-drawer-head"><div><strong>Your companion, Elo</strong><small>Here whenever you need a moment.</small></div><button id="closeElo" aria-label="Close Elo">×</button></div><div id="eloMount"></div></div>
 <div id="toast" class="toast"></div>
 <div id="modal" class="modal hidden"><div class="modal-card"><button class="modal-close" id="closeModal">×</button><div id="modalContent"></div></div></div>
 <script src="scripts/prototype.js"></script>
+<script src="scripts/gallery.js"></script>
 </body></html>

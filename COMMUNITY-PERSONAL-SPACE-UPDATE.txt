@@ -1,0 +1,27 @@
+MOOD DECK — COMMUNITY & PERSONAL SPACE UPDATE
+
+WHAT CHANGED
+- Personal Space remains a separate main-app destination, opened from the profile control in the main header/sidebar.
+- Expanded Personal Space profile editor: display name, username, bio, interests, optional location, optional email, profile visibility, and profile photo.
+- Profile photos are resized before local storage to reduce storage use.
+- Community no longer contains a username/profile editing form.
+- Community now has For You, Discover People, Friend Requests, and My Friends sections.
+- Restored comment previews beneath feed posts, with a latest-two preview and an option to expand the full thread.
+- Restored comment controls: view comments and add a comment to a post. Comments are saved locally with each post.
+- Added friend-request workflow (send, accept, decline, remove) for local demo profiles.
+- Added searchable sample member cards with short bios and interest tags.
+- Added clear local-preview notices. Sample profiles are not real people and interactions are not shared across devices.
+- Community links back to Personal Space for profile changes.
+
+IMPORTANT LIMITATIONS
+This is still a frontend-only local prototype. The sample members are illustrative data. Friend requests, posts and friends are saved in the current browser only. Real registration, searchable member directory, cross-device friendships, messaging and live moderation require the planned Supabase backend.
+
+TESTING
+- Check the main app opens and existing pages still load.
+- Open Personal Space from the top profile control.
+- Edit profile fields, select a profile photo, save, then refresh.
+- Open Community from Explore.
+- Switch between For You, Discover People, Friend Requests and My Friends.
+- Search demo people, send a friend request, and confirm the request appears.
+- Like, comment on, or delete a post; create a post after setting a username.
+- Confirm comment previews and comment controls appear beneath feed posts, and that Personal Space remains separate from Community.
