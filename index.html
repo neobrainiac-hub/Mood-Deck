@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f6f4ee"><meta name="description" content="Mood Deck — Feel. Understand. Become.">
+<title>Mood Deck — Your space, your pace</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+<div id="splash" class="splash">
+  <div class="splash-mark"><svg viewBox="0 0 80 80" aria-hidden="true"><path d="M40 66C15 54 12 30 29 17c5 9 9 16 11 25 3-16 13-26 25-29 4 22-4 42-25 53Z" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M40 66c-1-17 5-31 20-45" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></div>
+  <div class="splash-word">mood deck<span>FEEL. UNDERSTAND. BECOME.</span></div>
+  <div class="splash-orbit"><i></i><i></i><i></i></div>
+</div>
+
+<div id="auth" class="auth hidden">
+  <div class="auth-panel">
+    <div class="brand"><img class="brand-mark-img" src="assets/mood-deck-mark.svg" alt=""><span>mood deck</span></div>
+    <p class="eyebrow">A SPACE TO COME BACK TO YOURSELF</p>
+    <h1>Make room for<br><em>every version</em> of you.</h1>
+    <p class="muted">A name helps make this space feel like yours. Your reflections stay on this device.</p>
+    <form id="profileForm">
+      <label for="profileName">What should we call you?</label>
+      <input id="profileName" maxlength="28" placeholder="Your preferred name" required autocomplete="given-name">
+      <p class="profile-hint">You can change this anytime.</p>
+      <label for="profileEmail">Email <span class="optional">optional · not used for an account</span></label>
+      <input id="profileEmail" type="email" placeholder="you@example.com" autocomplete="email">
+      <button class="btn primary full" type="submit">Create my space <span>↗</span></button>
+    </form>
+    <p class="tiny">This prototype creates a profile on this device only. It does not create a cloud account.</p>
+  </div>
+  <div class="auth-art"><div class="auth-sun"></div><div class="auth-quote">“You are allowed<br>to arrive as you are.”</div><div class="auth-caption">YOUR SPACE. YOUR PACE.</div></div>
+</div>
+
+<div id="app" class="app hidden">
+  <aside class="sidebar">
+    <a class="brand" href="#" data-page="home"><img class="brand-mark-img" src="assets/mood-deck-mark.svg" alt=""><span>mood deck</span></a>
+    <div class="side-label">YOUR SPACE</div>
+    <nav class="nav">
+      <button class="nav-item active" data-page="home"><span>⌂</span> Overview</button>
+      <button class="nav-item" data-page="checkin"><span>◉</span> Check-in</button>
+      <button class="nav-item" data-page="journal"><span>▤</span> Journal</button>
+      <button class="nav-item" data-page="insights"><span>⌁</span> Insights</button>
+      <button class="nav-item" data-page="elo"><span>✳</span> Elo <b class="new-tag">AI</b></button>
+      <button class="nav-item" data-page="play"><span>✧</span> Mood Play <b class="new-tag">NEW</b></button>
+    </nav>
+    <div class="side-label platform-label">FAITH &amp; COMMUNITY</div>
+    <nav class="nav">
+      <a class="nav-item external-nav" href="pages/bible.html"><span>⌑</span> The Word</a>
+      <a class="nav-item external-nav" href="pages/music.html"><span>♫</span> The Sound</a>
+      <a class="nav-item external-nav" href="pages/community.html"><span>◎</span> Community</a>
+      <a class="nav-item external-nav" href="pages/ripple-room.html"><span>◌</span> Ripple Room</a>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="mini-profile"><div class="avatar-mini" id="sideAvatar">M</div><div><strong id="sideName">Your space</strong><small>Personal space</small></div><button data-page="profile" aria-label="Profile settings">···</button></div>
+      <p>Made for the human in you. <span>✳</span></p>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar"><div class="mobile-brand"><img class="brand-mark-img" src="assets/mood-deck-mark.svg" alt=""> mood deck</div><div class="top-date" id="todayDate"></div><button class="profile-pill" data-page="profile"><span id="topInitial">M</span><span id="topName">Profile</span><span>⌄</span></button></header>
+    <section class="page active" id="page-home">
+      <div class="welcome-row"><div><p class="eyebrow" id="greeting">A MOMENT FOR YOU</p><h1 id="welcomeTitle">Welcome back.</h1><p class="muted">You don't have to have it all figured out.</p></div><div class="welcome-stamp">YOUR SPACE<br><b>YOUR PACE</b></div></div>
+      <div class="hero-card">
+        <div class="hero-copy"><span class="eyebrow">01 / DAILY PRACTICE</span><h2>Meet yourself<br>where you are.</h2><p>A small check-in can make space for a bigger understanding.</p><button class="btn dark" data-page="checkin">Check in with yourself <span>↗</span></button></div>
+        <div class="hero-art"><div class="hero-ring ring-one"></div><div class="hero-ring ring-two"></div><div class="hero-blob"></div><div class="hero-spark">✳</div></div>
+        <span class="hero-index">01</span>
+      </div>
+      <div class="section-head"><div><p class="eyebrow">A LITTLE AWARENESS GOES A LONG WAY</p><h2>Your emotional snapshot</h2></div><button class="text-link" data-page="insights">View insights ↗</button></div>
+      <div class="stats-grid">
+        <article class="stat-card"><span class="stat-icon">◷</span><small>CHECK-INS</small><strong id="statCount">0</strong><p>Your moments of awareness</p></article>
+        <article class="stat-card"><span class="stat-icon">♡</span><small>RECENT MOOD</small><strong id="statMood">—</strong><p id="statMoodDate">Your latest reflection</p></article>
+        <article class="stat-card"><span class="stat-icon">✧</span><small>JOURNAL NOTES</small><strong id="statJournal">0</strong><p>Thoughts you've made room for</p></article>
+      </div>
+      <section class="next-step-card hidden" id="nextStepCard" aria-live="polite">
+        <div class="next-step-copy"><p class="eyebrow">AFTER YOUR CHECK-IN</p><h2 id="nextStepTitle">You've checked in. What do you need now?</h2><p id="nextStepText">Your feelings don't need to be fixed. Maybe they just need a little attention.</p></div>
+        <div class="next-step-actions" id="nextStepActions"></div>
+        <p class="next-step-foot">No pressure to choose. You can leave this moment as it is.</p>
+      </section>
+      <div class="lower-grid">
+        <article class="panel recent-panel"><div class="panel-head"><div><p class="eyebrow">LOOKING BACK</p><h3>Recent check-ins</h3></div><button class="text-link" data-page="insights">See all</button></div><div id="recentList" class="recent-list"><div class="empty">Your first check-in is waiting whenever you are.</div></div></article>
+        <article class="panel quote-panel"><div class="quote-symbol">“</div><p class="eyebrow">A THOUGHT TO KEEP</p><h3 id="dailyQuote">You can be a work in progress and still be worthy of gentleness.</h3><span>— A note from Mood Deck</span></article>
+      </div>
+      <div class="section-head"><div><p class="eyebrow">THE NEXT CHAPTER</p><h2>Explore more of Mood Deck</h2></div></div>
+      <div class="platform-links">
+        <a href="pages/bible.html"><span>⌑</span><strong>The Word</strong><small>Bible reading and the 365-day journey</small></a>
+        <a href="pages/music.html"><span>♫</span><strong>The Sound</strong><small>Gospel music and worship</small></a>
+        <a href="pages/ripple-room.html"><span>◌</span><strong>Ripple Room</strong><small>Our first immersive experience</small></a>
+        <a href="pages/community.html"><span>◎</span><strong>Community</strong><small>Testimonies and shared growth</small></a>
+      </div>
+    </section>
+
+    <section class="page" id="page-checkin">
+      <div class="page-intro"><p class="eyebrow">02 / CHECK IN</p><h1>What is present<br><em>for you today?</em></h1><p class="muted">There is no right answer. Choose what feels closest.</p></div>
+      <div class="checkin-layout"><div class="panel emotion-panel"><div class="panel-head"><div><p class="eyebrow">CHOOSE YOUR FEELING</p><h3>How are you feeling?</h3></div><span class="step-count">01 / 03</span></div>
+        <div class="mood-tabs" id="moodTabs"><button class="selected" data-group="all">All feelings</button><button data-group="bright">Bright</button><button data-group="steady">Steady</button><button data-group="heavy">Heavy</button><button data-group="complex">Complex</button></div>
+        <div id="moodGrid" class="mood-grid"></div>
+        <div id="moodDetail" class="mood-detail hidden"><strong id="chosenMood">Joyful</strong><span id="chosenDesc">A little light is finding its way in.</span><div class="intensity-row"><label for="intensity">How strong is this feeling?</label><output id="intensityValue">3 / 5</output></div><input id="intensity" type="range" min="1" max="5" value="3"></div>
+      </div>
+      <div class="panel note-panel"><p class="eyebrow">02 / ADD A LITTLE CONTEXT</p><h3>What might be behind it?</h3><div class="tag-list" id="triggerList"><button>Work or studies</button><button>Relationships</button><button>Rest and energy</button><button>Something unexpected</button><button>Personal growth</button><button>Not sure yet</button></div><label for="moodNote">Anything you'd like to put into words?</label><textarea id="moodNote" rows="4" placeholder="No pressure to explain everything…"></textarea><button class="btn primary full" id="saveMood" disabled>Save this check-in <span>↗</span></button><p class="tiny">Your reflections are stored locally on this device.</p></div></div>
+    </section>
+
+    <section class="page" id="page-journal"><div class="page-intro"><p class="eyebrow">03 / JOURNAL</p><h1>Let the thoughts<br><em>land somewhere.</em></h1><p class="muted">A private place for the things you want to remember, release or understand.</p></div>
+      <section class="revisit-panel panel" id="revisitPanel" aria-labelledby="revisitHeading">
+        <div class="revisit-heading"><div><p class="eyebrow">A MOMENT FROM YOUR PAST</p><h2 id="revisitHeading">Revisit this moment.</h2><p class="muted">Some moments deserve a second look. Meet an older feeling with the person you are today.</p></div><span class="revisit-mark" aria-hidden="true">↺</span></div>
+        <div id="revisitMoment" class="revisit-moment"><div class="empty">Your past check-ins will appear here when you have a moment to revisit.</div></div>
+        <div id="revisitComposer" class="revisit-composer hidden"><label for="revisitText">How does this moment feel to you today?</label><textarea id="revisitText" rows="4" maxlength="600" placeholder="You can feel differently now. You can still feel the same. Start wherever you are…"></textarea><div class="revisit-actions"><button class="btn light" id="anotherMoment" type="button">Another moment ↻</button><button class="btn primary" id="saveRevisit" type="button">Save reflection ↗</button></div></div>
+        <div class="revisit-saved-wrap"><p class="eyebrow">REFLECTIONS YOU'VE REVISITED</p><div id="revisitSaved" class="revisit-saved"><div class="empty">Your revisit reflections will stay here.</div></div></div>
+      </section>
+      <div class="journal-layout"><div class="panel journal-compose"><p class="eyebrow">A PAGE FOR TODAY</p><h3>What is on your mind?</h3><div class="prompt-chip" id="journalPrompt">What do you need more of right now?</div><textarea id="journalText" rows="9" placeholder="Start wherever you are…"></textarea><div class="compose-foot"><span class="tiny">Only you can see what you write here.</span><button class="btn primary" id="saveJournal">Save reflection ↗</button></div></div><div class="panel"><div class="panel-head"><div><p class="eyebrow">YOUR WORDS</p><h3>Past reflections</h3></div><span id="journalCount" class="step-count">0 NOTES</span></div><div id="journalList" class="journal-list"><div class="empty">Your pages will appear here.</div></div></div></div>
+    </section>
+
+    <section class="page" id="page-insights"><div class="page-intro"><p class="eyebrow">04 / INSIGHTS</p><h1>Notice the patterns.<br><em>Not the pressure.</em></h1><p class="muted">Your emotions are information, not a scorecard.</p></div><div class="insight-stats" id="insightStats"></div><div class="insight-layout"><article class="panel"><div class="panel-head"><div><p class="eyebrow">YOUR RECENT RHYTHM</p><h3>Last seven days</h3></div></div><div id="weekChart" class="week-chart"></div></article><article class="panel"><p class="eyebrow">WHAT SHOWS UP</p><h3>Emotion mix</h3><div id="emotionMix" class="mix-list"></div></article></div><div class="insight-reflection-grid"><article class="panel insight-reflection" id="insightReflection"><p class="eyebrow">A LOOK BACK</p><h3>Your week, in reflection.</h3><div id="weeklyReflection" class="reflection-copy">Your reflections will take shape as you check in.</div></article><article class="panel insight-influences"><p class="eyebrow">WHAT MAY BE AROUND YOU</p><h3>Recurring influences this week</h3><div id="triggerInsights" class="trigger-insight-list"><div class="empty">Your check-in influences will appear here.</div></div></article></div><div class="panel history-panel"><div class="panel-head"><div><p class="eyebrow">YOUR HISTORY</p><h3>All check-ins</h3></div><button class="text-link" id="exportData">Export my data ↓</button></div><div id="historyList" class="history-list"></div></div></section>
+
+    <section class="page" id="page-elo"><div class="page-intro"><p class="eyebrow">05 / YOUR REFLECTION COMPANION</p><h1>A softer place<br><em>to untangle things.</em></h1><p class="muted">Elo is here to help you explore what you're feeling, one thought at a time.</p></div><div class="elo-layout"><div class="elo-profile panel"><div class="elo-avatar"><svg viewBox="0 0 160 160" role="img" aria-label="Illustrated portrait of Elo"><defs><clipPath id="eloClip"><circle cx="80" cy="80" r="76"/></clipPath></defs><circle cx="80" cy="80" r="78" fill="#E8D9C7"/><g clip-path="url(#eloClip)"><path d="M26 164c1-42 22-61 54-61s53 19 54 61" fill="#6D806C"/><path d="M38 67c-5-36 14-57 43-57 34 0 49 26 42 62l-9 36H48Z" fill="#302C2A"/><ellipse cx="80" cy="73" rx="34" ry="42" fill="#9D644D"/><path d="M47 63c2-33 18-47 38-47 23 0 37 16 38 39-10-4-18-14-23-25-9 17-29 28-53 33Z" fill="#302C2A"/><path d="M63 76q7-6 14 0M88 76q7-6 14 0" stroke="#3E2C27" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M70 92q10 8 20 0" stroke="#754638" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M46 58q-8 35 8 55M113 43q15 31-3 69" stroke="#302C2A" stroke-width="8" fill="none" stroke-linecap="round"/></g></svg></div><p class="eyebrow">MEET YOUR COMPANION</p><h2>Hi, I'm Elo.</h2><p class="muted">A thoughtful little corner for curiosity, reflection and perspective.</p><div class="elo-status"><i></i> Reflection mode · Offline prototype</div></div><div class="panel chat-panel"><div class="chat-head"><div class="elo-dot"><img src="assets/elo-avatar.svg" alt="Elo"></div><div><strong>Elo</strong><small>Here with you, no judgement.</small></div><span class="online-note">LOCAL MODE</span></div><div id="chatMessages" class="chat-messages"><div class="chat-bubble elo-bubble">Hey there. How are you arriving today — and what would you like to make a little more sense of?</div></div><div class="suggestions"><button>I'm feeling overwhelmed</button><button>I need a little perspective</button><button>Help me reflect</button></div><form id="chatForm" class="chat-input"><input id="chatInput" placeholder="Share what's on your mind…" autocomplete="off"><button aria-label="Send message">↑</button></form><p class="tiny">Elo uses a small built-in reflection library in this prototype. It is not a live AI service or a substitute for professional support.</p></div></div></section>
+
+    <section class="page" id="page-play"><div class="page-intro"><p class="eyebrow">06 / MOOD PLAY</p><h1>Play a little.<br><em>Feel a little lighter.</em></h1><p class="muted">Gentle activities for curiosity, calm and emotional awareness. No scores to chase.</p></div>
+      <div class="game-feature"><div><p class="eyebrow">TAKE A BREATH</p><h2>Breathing Studio</h2><p>Follow the circle. Inhale, hold, exhale. Nothing else to do.</p><button class="btn dark" id="openBreath">Begin breathing ↗</button></div><div class="breath-art"><div class="breath-circle" id="breathCircle"><span id="breathLabel">BREATHE</span></div></div></div>
+      <div class="section-head"><div><p class="eyebrow">SMALL MOMENTS OF PLAY</p><h2>Choose your little reset</h2></div><span class="step-count">OPTIONAL · JUST FOR YOU</span></div>
+      <div class="games-grid">
+        <article class="game-card mood-match"><div class="game-visual"><span>◌</span><i>✳</i></div><p class="eyebrow">01 / EMOTIONAL AWARENESS</p><h3>Mood Match</h3><p>Match a feeling to a moment that might bring it up.</p><button class="text-link" data-game="match">Play Mood Match ↗</button></article>
+        <article class="game-card memory-game"><div class="game-visual"><span>✧</span><i>♡</i></div><p class="eyebrow">02 / MINDFUL FOCUS</p><h3>Mindful Memory</h3><p>A soft little matching game. Take your time.</p><button class="text-link" data-game="memory">Play Mindful Memory ↗</button></article>
+        <article class="game-card garden-game"><div class="game-visual"><span>❋</span><i>♧</i></div><p class="eyebrow">03 / GRATITUDE</p><h3>Gratitude Garden</h3><p>Plant a small thought about something good, big or tiny.</p><button class="text-link" data-game="garden">Visit your garden ↗</button></article>
+        <article class="game-card zen-game"><div class="game-visual"><span>◉</span><i>⌁</i></div><p class="eyebrow">04 / SLOW DOWN</p><h3>Zen Pause</h3><p>A short sensory reset to bring your attention back to now.</p><button class="text-link" data-game="zen">Take a Zen Pause ↗</button></article>
+      </div><div id="gameStage" class="panel game-stage hidden"></div>
+    </section>
+
+    <section class="page" id="page-profile"><div class="page-intro"><p class="eyebrow">YOUR SPACE / SETTINGS</p><h1>A space that feels<br><em>like yours.</em></h1><p class="muted">Manage your profile and the way Mood Deck feels.</p></div><div class="profile-layout"><div class="panel profile-card"><div class="profile-avatar" id="profileAvatar">M</div><p class="eyebrow">YOUR PROFILE</p><h2 id="profileHeading">Your name</h2><p class="muted" id="profileEmailView">Local profile</p><span class="local-badge">● SAVED ON THIS DEVICE</span></div><div class="panel profile-settings"><p class="eyebrow">PERSONAL DETAILS</p><h3>Make yourself at home</h3><form id="editProfile"><label for="editName">Preferred name</label><input id="editName" maxlength="28"><label for="editEmail">Email (optional)</label><input id="editEmail" type="email"><button class="btn primary">Save changes</button></form><hr><p class="eyebrow">YOUR DATA</p><div class="setting-row"><div><strong>Export your reflections</strong><small>Download your mood and journal data as JSON.</small></div><button class="btn light" id="profileExport">Export</button></div><div class="setting-row"><div><strong>Start fresh</strong><small>Delete all local check-ins and journal entries.</small></div><button class="btn danger" id="clearData">Clear data</button></div><p class="tiny">This prototype does not yet have cloud accounts, password authentication or cross-device sync. Your information stays in this browser's local storage.</p></div></div></section>
+    <footer class="app-footer">MOOD DECK <span>·</span> FEEL. UNDERSTAND. BECOME.</footer>
+  </main>
+  <nav class="mobile-nav" aria-label="All Mood Deck sections">
+<a class="active" href="#page-home" data-page="home"><span>⌂</span>Home</a>
+<a href="#page-checkin" data-page="checkin"><span>◉</span>Check-in</a>
+<a href="#page-journal" data-page="journal"><span>▤</span>Journal</a>
+<a href="#page-insights" data-page="insights"><span>⌁</span>Insights</a>
+<a href="#page-elo" data-page="elo"><span>✳</span>Elo</a>
+<a href="#page-play" data-page="play"><span>✧</span>Play</a>
+<a href="pages/bible.html"><span>⌑</span>The Word</a>
+<a href="pages/music.html"><span>♫</span>The Sound</a>
+<a href="pages/ripple-room.html"><span>◌</span>Ripple</a>
+<a href="pages/community.html"><span>◎</span>Community</a>
+<a href="#page-profile" data-page="profile"><span>○</span>You</a>
+</nav>
+</div>
+<div id="toast" class="toast"></div>
+<div id="modal" class="modal hidden"><div class="modal-card"><button class="modal-close" id="closeModal">×</button><div id="modalContent"></div></div></div>
+<script src="scripts/prototype.js"></script>
+</body></html>
