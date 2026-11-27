@@ -1,0 +1,23 @@
+{
+  "name": "mood-deck",
+  "version": "1.0.0",
+  "description": "Mood Deck — A space to feel, understand and become. HTML, CSS and vanilla JavaScript project with no build step.",
+  "scripts": {
+    "dev": "echo \"Open index.html in a browser or use a local server like 'python3 -m http.server'\"",
+    "test": "echo \"No tests configured yet\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neobrainiac-hub/Mood-Deck.git"
+  },
+  "keywords": ["mood", "mental-health", "wellness", "journal", "bible", "meditation"],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neobrainiac-hub/Mood-Deck/issues"
+  },
+  "homepage": "https://github.com/neobrainiac-hub/Mood-Deck#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
